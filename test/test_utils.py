@@ -19,7 +19,7 @@ class Tester(unittest.TestCase):
         assert torch.equal(t, t_clone), 'make_grid modified tensor in-place'
 
     def test_make_grid_raises_with_variable(self):
-        t = torch.autograd.Variable(torch.rand(3, 10, 10))
+        t = torch.rand(3, 10, 10)
         with self.assertRaises(TypeError):
             utils.make_grid(t)
 
